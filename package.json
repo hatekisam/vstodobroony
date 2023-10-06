@@ -4,18 +4,25 @@
   "description": "Manage your staff",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.83.0"
+    "vscode": "^1.52.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:vstodobroony.askQuestion"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "vstodobroony.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "vstodobroony.askQuestion",
+        "category": "VSTODO",
+        "title": "Ask Question"
       }
     ]
   },
@@ -31,18 +38,26 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.83.0",
     "@types/mocha": "^10.0.2",
     "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
+    "@vscode/test-electron": "^2.3.4",
     "eslint": "^8.50.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
-    "typescript": "^5.2.2",
     "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "@vscode/test-electron": "^2.3.4"
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.2",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup-plugin-svelte": "^7.1.6",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte-preprocess": "^5.0.4"
   }
 }
